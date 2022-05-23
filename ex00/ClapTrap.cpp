@@ -22,7 +22,7 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
 	attackDmg = rhs.attackDmg;
 	energy = rhs.energy;
 	hp = rhs.hp;
-	name = rhs.hp;
+	name = rhs.name;
 	return *this;
 }
 

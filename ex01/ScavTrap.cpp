@@ -23,7 +23,7 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &rhs) {
 	attackDmg = rhs.attackDmg;
 	energy = rhs.energy;
 	hp = rhs.hp;
-	name = rhs.hp;
+	name = rhs.name;
 	gatekeeperMode = rhs.gatekeeperMode;
 	return *this;
 }

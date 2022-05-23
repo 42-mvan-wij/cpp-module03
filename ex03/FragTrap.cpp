@@ -22,7 +22,7 @@ FragTrap &FragTrap::operator=(FragTrap const &rhs) {
 	attackDmg = rhs.attackDmg;
 	energy = rhs.energy;
 	hp = rhs.hp;
-	name = rhs.hp;
+	name = rhs.name;
 	return *this;
 }
 

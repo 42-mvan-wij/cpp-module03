@@ -8,23 +8,19 @@ void check_leaks() {
 }
 
 int main() {
-	ClapTrap clap_trap("Clappy");
+	ClapTrap trapClap("trapClap");
+	ClapTrap trapClap2(trapClap);
 
-	clap_trap.attack("Johnny");
-	clap_trap.takeDamage(3);
-	clap_trap.beRepaired(5);
-	clap_trap.takeDamage(10);
-	clap_trap.beRepaired(5);
-	clap_trap.beRepaired(0);
-	clap_trap.beRepaired(0);
-	clap_trap.beRepaired(0);
-	clap_trap.beRepaired(0);
-	clap_trap.beRepaired(0);
-	clap_trap.beRepaired(0);
-	clap_trap.beRepaired(0);
-	clap_trap.beRepaired(0);
-	clap_trap.takeDamage(5);
-	clap_trap.attack("Johnny");
-	clap_trap.takeDamage(5);
+	trapClap.takeDamage(1);
+	trapClap.beRepaired(200);
+	trapClap.takeDamage(11241241);
+	trapClap.beRepaired(1);
+	trapClap.attack("a lifeless object");
+
+	trapClap2.takeDamage(1);
+	trapClap2.beRepaired(200);
+	trapClap2.takeDamage(11241241);
+	trapClap2.beRepaired(1);
+	trapClap.attack("a lifeless object");
 	return (0);
 }
