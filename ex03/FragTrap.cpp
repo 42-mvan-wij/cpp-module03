@@ -1,21 +1,22 @@
 #include <iostream>
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() {
+FragTrap::FragTrap(): ClapTrap("Unnamed FragTrap") {
 	std::cout << "FragTrap() called" << std::endl;
-}
-
-FragTrap::FragTrap(std::string name) {
-	std::cout << "FragTrap(std::string) called" << std::endl;
-	this->name = name;
 	hp = 100;
 	energy = 100;
 	attackDmg = 30;
 }
 
-FragTrap::FragTrap(const FragTrap &src) {
+FragTrap::FragTrap(std::string name): ClapTrap(name) {
+	std::cout << "FragTrap(std::string) called" << std::endl;
+	hp = 100;
+	energy = 100;
+	attackDmg = 30;
+}
+
+FragTrap::FragTrap(const FragTrap &src): ClapTrap(src) {
 	std::cout << "FragTrap copy constructor called" << std::endl;
-	*this = src;
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &rhs) {

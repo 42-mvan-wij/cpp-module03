@@ -1,18 +1,16 @@
 #include <iostream>
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() {
+DiamondTrap::DiamondTrap(): ClapTrap("Unnamed DiamondTrap_clap_name"), name("Unnamed DiamondTrap") {
 	std::cout << "DiamondTrap() called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name") {
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), name(name) {
 	std::cout << "DiamondTrap(std::string) called" << std::endl;
-	this->name = name;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &src) {
+DiamondTrap::DiamondTrap(const DiamondTrap &src): ClapTrap(src), name(src.name) {
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
-	*this = src;
 }
 
 DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs) {
@@ -29,5 +27,5 @@ DiamondTrap::~DiamondTrap() {
 }
 
 void DiamondTrap::whoAmI() {
-	std::cout << "I am: " << ClapTrap::name << " a.k.a.: " << name << std::endl;
+	std::cout << "I am: \"" << ClapTrap::name << "\" a.k.a.: \"" << name << "\"" << std::endl;
 }

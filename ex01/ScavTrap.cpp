@@ -1,22 +1,22 @@
 #include <iostream>
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() {
+ScavTrap::ScavTrap(): ClapTrap("Unnamed ScavTrap"), gatekeeperMode(false) {
 	std::cout << "ScavTrap() called" << std::endl;
-}
-
-ScavTrap::ScavTrap(std::string name) {
-	std::cout << "ScavTrap(std::string) called" << std::endl;
-	this->name = name;
 	hp = 100;
 	energy = 50;
 	attackDmg = 20;
-	gatekeeperMode = false;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &src) {
+ScavTrap::ScavTrap(std::string name): ClapTrap(name), gatekeeperMode(false) {
+	std::cout << "ScavTrap(std::string) called" << std::endl;
+	hp = 100;
+	energy = 50;
+	attackDmg = 20;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src), gatekeeperMode(src.gatekeeperMode) {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
-	*this = src;
 }
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &rhs) {

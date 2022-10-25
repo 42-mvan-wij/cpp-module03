@@ -1,21 +1,16 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() {
+ClapTrap::ClapTrap(): name("Unnamed ClapTrap"), hp(10), energy(10), attackDmg(0) {
 	std::cout << "ClapTrap() called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) {
+ClapTrap::ClapTrap(std::string name): name(name), hp(10), energy(10), attackDmg(0) {
 	std::cout << "ClapTrap(std::string) called" << std::endl;
-	this->name = name;
-	hp = 10;
-	energy = 10;
-	attackDmg = 0;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &src) {
+ClapTrap::ClapTrap(const ClapTrap &src): name(src.name), hp(src.hp), energy(src.energy), attackDmg(src.attackDmg) {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
-	*this = src;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {

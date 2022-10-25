@@ -1,13 +1,14 @@
 #include <iostream>
+#include <cstdlib>
 #include "ClapTrap.hpp"
 
-__attribute__((destructor))
 void check_leaks() {
 	std::cout << std::endl;
 	system("leaks -q claptrap");
 }
 
 int main() {
+	atexit(&check_leaks);
 	ClapTrap trapClap("trapClap");
 	ClapTrap trapClap2(trapClap);
 

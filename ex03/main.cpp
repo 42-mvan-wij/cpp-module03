@@ -1,16 +1,17 @@
 #include <iostream>
+#include <cstdlib>
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
-__attribute__((destructor))
 void check_leaks() {
 	std::cout << std::endl;
 	system("leaks -q diamondtrap");
 }
 
 int main() {
+	atexit(&check_leaks);
 	{
 		ClapTrap claptrap("MGMT");
 		claptrap.attack("an innocent leaf");
@@ -36,6 +37,16 @@ int main() {
 	std::cout << std::endl;
 	{
 		DiamondTrap diamondtrap("Sweet");
+		diamondtrap.attack("itself");
+		diamondtrap.takeDamage(3);
+		diamondtrap.beRepaired(2);
+		diamondtrap.guardGate();
+		diamondtrap.highFivesGuys();
+		diamondtrap.whoAmI();
+	}
+	std::cout << std::endl;
+	{
+		DiamondTrap diamondtrap;
 		diamondtrap.attack("itself");
 		diamondtrap.takeDamage(3);
 		diamondtrap.beRepaired(2);
