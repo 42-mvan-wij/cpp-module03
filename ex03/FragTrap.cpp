@@ -20,6 +20,8 @@ FragTrap::FragTrap(const FragTrap &src): ClapTrap(src) {
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &rhs) {
+	if (this == &rhs)
+		return *this;
 	attackDmg = rhs.attackDmg;
 	energy = rhs.energy;
 	hp = rhs.hp;

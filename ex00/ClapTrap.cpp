@@ -14,6 +14,8 @@ ClapTrap::ClapTrap(const ClapTrap &src) : name(src.name), hp(src.hp), energy(src
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
+	if (this == &rhs)
+		return *this;
 	attackDmg = rhs.attackDmg;
 	energy = rhs.energy;
 	hp = rhs.hp;

@@ -20,6 +20,8 @@ ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src), gatekeeperMode(src.gatek
 }
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &rhs) {
+	if (this == &rhs)
+		return *this;
 	attackDmg = rhs.attackDmg;
 	energy = rhs.energy;
 	hp = rhs.hp;

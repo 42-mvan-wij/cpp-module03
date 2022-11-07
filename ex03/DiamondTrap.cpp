@@ -14,6 +14,8 @@ DiamondTrap::DiamondTrap(const DiamondTrap &src): ClapTrap(src), name(src.name) 
 }
 
 DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs) {
+	if (this == &rhs)
+		return *this;
 	attackDmg = rhs.attackDmg;
 	energy = rhs.energy;
 	hp = rhs.hp;
