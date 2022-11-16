@@ -5,11 +5,12 @@
 
 void check_leaks() {
 	std::cout << std::endl;
-	system("leaks -q scavtrap");
+	std::system("leaks -q scavtrap");
 }
 
 int main() {
-	atexit(&check_leaks);
+	std::atexit(&check_leaks);
+
 	{
 		ClapTrap claptrap("MGMT");
 		claptrap.attack("an innocent leaf");
@@ -23,6 +24,20 @@ int main() {
 		scavtrap.takeDamage(3);
 		scavtrap.beRepaired(2);
 		scavtrap.guardGate();
+	}
+	std::cout << std::endl;
+	{
+		ScavTrap scavtrap("TWRP");
+		ScavTrap scavtrap2("scavtrap2");
+		scavtrap2.attack("a lifeless object");
+		scavtrap2.takeDamage(3);
+		scavtrap2.beRepaired(2);
+		scavtrap2.guardGate();
+		scavtrap2 = scavtrap;
+		scavtrap2.attack("a lifeless object");
+		scavtrap2.takeDamage(3);
+		scavtrap2.beRepaired(2);
+		scavtrap2.guardGate();
 	}
 	return (0);
 }

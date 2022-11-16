@@ -6,11 +6,12 @@
 
 void check_leaks() {
 	std::cout << std::endl;
-	system("leaks -q fraptrap");
+	std::system("leaks -q fragtrap");
 }
 
 int main() {
-	atexit(&check_leaks);
+	std::atexit(&check_leaks);
+
 	{
 		ClapTrap claptrap("MGMT");
 		claptrap.attack("an innocent leaf");

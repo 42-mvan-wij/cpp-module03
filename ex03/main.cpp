@@ -7,11 +7,12 @@
 
 void check_leaks() {
 	std::cout << std::endl;
-	system("leaks -q diamondtrap");
+	std::system("leaks -q diamondtrap");
 }
 
 int main() {
-	atexit(&check_leaks);
+	std::atexit(&check_leaks);
+
 	{
 		ClapTrap claptrap("MGMT");
 		claptrap.attack("an innocent leaf");
@@ -37,7 +38,7 @@ int main() {
 	std::cout << std::endl;
 	{
 		DiamondTrap diamondtrap("Sweet");
-		diamondtrap.attack("itself");
+		diamondtrap.attack("The Earth");
 		diamondtrap.takeDamage(3);
 		diamondtrap.beRepaired(2);
 		diamondtrap.guardGate();
@@ -47,7 +48,7 @@ int main() {
 	std::cout << std::endl;
 	{
 		DiamondTrap diamondtrap;
-		diamondtrap.attack("itself");
+		diamondtrap.attack("The Earth");
 		diamondtrap.takeDamage(3);
 		diamondtrap.beRepaired(2);
 		diamondtrap.guardGate();
