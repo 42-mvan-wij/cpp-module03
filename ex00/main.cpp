@@ -11,7 +11,7 @@ int main() {
 	std::atexit(&check_leaks);
 
 	ClapTrap defaultClapTrap;
-	ClapTrap trapClap("trapClap");
+	ClapTrap trapClap("CL4P-TP");
 	ClapTrap trapClap2(trapClap);
 
 	std::cout << std::endl;

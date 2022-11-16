@@ -12,14 +12,14 @@ int main() {
 	std::atexit(&check_leaks);
 
 	{
-		ClapTrap claptrap("MGMT");
+		ClapTrap claptrap("CL4P-TP");
 		claptrap.attack("an innocent leaf");
 		claptrap.takeDamage(3);
 		claptrap.beRepaired(2);
 	}
 	std::cout << std::endl;
 	{
-		ScavTrap scavtrap("TWRP");
+		ScavTrap scavtrap("SC4V-TP");
 		scavtrap.attack("a lifeless object");
 		scavtrap.takeDamage(3);
 		scavtrap.beRepaired(2);
@@ -27,7 +27,7 @@ int main() {
 	}
 	std::cout << std::endl;
 	{
-		ScavTrap scavtrap("TWRP");
+		ScavTrap scavtrap("SC4V-TP");
 		ScavTrap scavtrap2("scavtrap2");
 		scavtrap2.attack("a lifeless object");
 		scavtrap2.takeDamage(3);
