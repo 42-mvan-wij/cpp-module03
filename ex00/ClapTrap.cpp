@@ -2,18 +2,19 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(): name("Unnamed ClapTrap"), hp(10), energy(10), attackDmg(0) {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): name(name), hp(10), energy(10), attackDmg(0) {
-	std::cout << "ClapTrap(std::string) called" << std::endl;
+	std::cout << "ClapTrap(std::string) costructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src) : name(src.name), hp(src.hp), energy(src.energy), attackDmg(src.attackDmg) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
+	std::cout << "ClapTrap copy assignment operator called" << std::endl;
 	if (this == &rhs)
 		return *this;
 	attackDmg = rhs.attackDmg;
@@ -27,9 +28,12 @@ ClapTrap::~ClapTrap() {
 	std::cout << "Destructor called" << std::endl;
 }
 
-void ClapTrap::attack(const std::string &target) {
+void Claptrap::attack(const std::string &target) {
 	if (energy == 0)
+	{
+		std::cout << "ClapTrap " << name << " tries to attack " << target << ", but has no energy left." << std::endl;
 		return ;
+	}
 	energy--;
 	std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDmg << " points of damage! " << name << " has " << energy << " energy left." << std::endl;
 }

@@ -2,14 +2,14 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(): ClapTrap("Unnamed ScavTrap"), gatekeeperMode(false) {
-	std::cout << "ScavTrap() called" << std::endl;
+	std::cout << "Default ScavTrap constructor called" << std::endl;
 	hp = 100;
 	energy = 50;
 	attackDmg = 20;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name), gatekeeperMode(false) {
-	std::cout << "ScavTrap(std::string) called" << std::endl;
+	std::cout << "ScavTrap(std::string) costructor called" << std::endl;
 	hp = 100;
 	energy = 50;
 	attackDmg = 20;
@@ -20,6 +20,7 @@ ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src), gatekeeperMode(src.gatek
 }
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &rhs) {
+	std::cout << "ScavTrap copy assignment operator called" << std::endl;
 	if (this == &rhs)
 		return *this;
 	attackDmg = rhs.attackDmg;
@@ -36,7 +37,10 @@ ScavTrap::~ScavTrap() {
 
 void ScavTrap::attack(const std::string &target) {
 	if (energy == 0)
+	{
+		std::cout << "ScavTrap " << name << " tries to attack " << target << ", but has no energy left." << std::endl;
 		return ;
+	}
 	energy--;
 	std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << attackDmg << " points of damage! " << name << " has " << energy << " energy left." << std::endl;
 }

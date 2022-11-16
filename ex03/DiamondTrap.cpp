@@ -2,11 +2,11 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap(): ClapTrap("Unnamed DiamondTrap_clap_name"), name("Unnamed DiamondTrap") {
-	std::cout << "DiamondTrap() called" << std::endl;
+	std::cout << "Default DiamondTrap constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), name(name) {
-	std::cout << "DiamondTrap(std::string) called" << std::endl;
+	std::cout << "DiamondTrap(std::string) costructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &src): ClapTrap(src), name(src.name) {
@@ -14,6 +14,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &src): ClapTrap(src), name(src.name) 
 }
 
 DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs) {
+	std::cout << "DiamondTrap copy assignment operator called" << std::endl;
 	if (this == &rhs)
 		return *this;
 	attackDmg = rhs.attackDmg;
