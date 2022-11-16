@@ -39,8 +39,10 @@ void ClapTrap::attack(const std::string &target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	if (hp <= 0)
+	if (hp <= 0) {
+		std::cout << "ClapTrap " << name << " is being kicked while they are down for " << amount << " points of damage." << std::endl;
 		return ;
+	}
 	hp -= amount;
 	if (hp <= 0) {
 		energy = 0;
