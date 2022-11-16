@@ -9,7 +9,7 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), name(
 	std::cout << "DiamondTrap(std::string) costructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &src): ClapTrap(src), name(src.name) {
+DiamondTrap::DiamondTrap(const DiamondTrap &src): ClapTrap(src), FragTrap(src), ScavTrap(src), name(src.name) {
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
 }
 

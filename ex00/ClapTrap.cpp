@@ -28,7 +28,7 @@ ClapTrap::~ClapTrap() {
 	std::cout << "Destructor called" << std::endl;
 }
 
-void Claptrap::attack(const std::string &target) {
+void ClapTrap::attack(const std::string &target) {
 	if (energy == 0)
 	{
 		std::cout << "ClapTrap " << name << " tries to attack " << target << ", but has no energy left." << std::endl;
