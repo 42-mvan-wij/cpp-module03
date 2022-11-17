@@ -18,9 +18,9 @@ class ClapTrap {
 
 	private:
 		std::string name;
-		int hp;
-		int energy;
-		int attackDmg;
+		unsigned int hp;
+		unsigned int energy;
+		unsigned int attackDmg;
 };
 
 #endif
